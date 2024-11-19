@@ -17,7 +17,7 @@ const SendBulkEmail = () => {
     try {
       console.log('Sending email to:', '/send-bulk-email');
       // Replace with your backend endpoint for sending emails
-      await axios.post('http://localhost:5000/api/send-bulk-email', {
+      await axios.post('https://bulk-email-toolserver-ekd60qags-ragavi-rs-projects.vercel.app/api/send-bulk-email', {
         emailList: emailList.split(','),  // Split emails by comma for multiple addresses
         subject,
         message,
