@@ -15,24 +15,17 @@ const SendBulkEmail = () => {
     event.preventDefault();
 
     try {
-      console.log('Sending email to:', '/send-bulk-email');
-      // Replace with your backend endpoint for sending emails
-      await axios.post('https://bulkemailserver.onrender.com/api/send-bulk-email', {
-        emailList: emailList.split(','),  // Split emails by comma for multiple addresses
-        subject,
-        message,
-      });
-      setSuccessMessage('Emails sent successfully!');
-      // Redirect to Dashboard page upon successful submission
-      setEmailList('');
-      setSubject('');
-      setMessage('');
+  await axios.post('https://bulkemailserver.onrender.com/api/send-bulk-email', {
+    emailList: emailList.split(','),
+    subject,
+    message,
+  });
+  setSuccessMessage('Emails sent successfully!');
+} catch (error) {
+  console.error('Error response:', error.response?.data || error.message);
+  alert(`Failed to send emails: ${error.response?.data?.error || 'Unknown error'}`);
+}
 
-    } catch (error) {
-      console.error('Failed to send emails:', error);
-      alert('Failed to send emails. Please try again.');
-    }
-  };
 
   return (
     <Box display="flex">
