@@ -15,11 +15,20 @@ const SendBulkEmail = () => {
     event.preventDefault();
 
     try {
-  await axios.post('https://bulkemailserver.onrender.com/api/send-bulk-email', {
-    emailList: emailList.split(','),
+  await axios.post(
+  'https://bulkemailserver.onrender.com/api/send-bulk-email',
+  {
+    emailList: emailList.split(',').map(email => email.trim()),
     subject,
     message,
-  });
+  },
+  {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }
+);
+
   setSuccessMessage('Emails sent successfully!');
 } catch (error) {
   console.error('Error response:', error.response?.data || error.message);
