@@ -26,10 +26,10 @@ const Sidebar = () => {
 
       {/* Navigation List */}
       <List>
-        {/* <ListItem button onClick={() => navigate('/dashboard')}>
+        <ListItem button onClick={() => navigate('/dashboard')}>
           <ListItemIcon><DashboardIcon style={{ color: 'white' }} /></ListItemIcon>
           <ListItemText primary="Dashboard" />
-        </ListItem> */}
+        </ListItem>
 
         <ListItem button onClick={() => navigate('/send-bulk-email')}>
           <ListItemIcon><EmailIcon style={{ color: 'white' }} /></ListItemIcon>
