@@ -57,7 +57,7 @@ const RegisterForm = () => {
     
     if (validateForm()) {
       try {
-        const response = await axios.post('http://localhost:5000/api/auth/register', formData);
+        const response = await axios.post('https://bulkemailserver.onrender.com/api/auth/register', formData);
         console.log('Registration successful:', response.data);
         alert('Registration successful' );
         navigate('/login'); // Redirect to login page
