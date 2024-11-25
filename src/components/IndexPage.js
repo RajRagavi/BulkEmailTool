@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Box, Typography } from '@mui/material';
 import LoginForm from './LoginForm'; // Assuming you have a separate LoginForm component
 import RegisterForm from './RegisterForm'; // Assuming you have a separate RegisterForm component
-import bannerImage from '../assest/img/Banner.jpg'; // Update the path if necessary
+import bannerImage from './Banner.jpg'; // Update the path if necessary
 
 const IndexPage = () => {
   const [formType, setFormType] = useState(null); // state to toggle between login and register forms
