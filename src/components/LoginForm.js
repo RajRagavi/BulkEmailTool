@@ -17,7 +17,7 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', formData);
+      const response = await axios.post('https://bulkemailserver.onrender.com/api/auth/login', formData);
       console.log('Login successful:', response.data);
       navigate('/send-bulk-email');
     } catch (error) {
